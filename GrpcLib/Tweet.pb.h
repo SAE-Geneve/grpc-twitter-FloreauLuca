@@ -772,8 +772,6 @@ class ShowIn :
 
   enum : int {
     kUserFieldNumber = 1,
-    kContentFieldNumber = 2,
-    kTimeFieldNumber = 3,
   };
   // string user = 1;
   void clear_user();
@@ -791,39 +789,12 @@ class ShowIn :
   std::string* _internal_mutable_user();
   public:
 
-  // string content = 2;
-  void clear_content();
-  const std::string& content() const;
-  void set_content(const std::string& value);
-  void set_content(std::string&& value);
-  void set_content(const char* value);
-  void set_content(const char* value, size_t size);
-  std::string* mutable_content();
-  std::string* release_content();
-  void set_allocated_content(std::string* content);
-  private:
-  const std::string& _internal_content() const;
-  void _internal_set_content(const std::string& value);
-  std::string* _internal_mutable_content();
-  public:
-
-  // int64 time = 3;
-  void clear_time();
-  ::PROTOBUF_NAMESPACE_ID::int64 time() const;
-  void set_time(::PROTOBUF_NAMESPACE_ID::int64 value);
-  private:
-  ::PROTOBUF_NAMESPACE_ID::int64 _internal_time() const;
-  void _internal_set_time(::PROTOBUF_NAMESPACE_ID::int64 value);
-  public:
-
   // @@protoc_insertion_point(class_scope:proto.ShowIn)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr content_;
-  ::PROTOBUF_NAMESPACE_ID::int64 time_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Tweet_2eproto;
 };
@@ -1083,9 +1054,25 @@ class LoginIn :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kPassFieldNumber = 1,
     kUserFieldNumber = 2,
-    kPassFieldNumber = 3,
   };
+  // string pass = 1;
+  void clear_pass();
+  const std::string& pass() const;
+  void set_pass(const std::string& value);
+  void set_pass(std::string&& value);
+  void set_pass(const char* value);
+  void set_pass(const char* value, size_t size);
+  std::string* mutable_pass();
+  std::string* release_pass();
+  void set_allocated_pass(std::string* pass);
+  private:
+  const std::string& _internal_pass() const;
+  void _internal_set_pass(const std::string& value);
+  std::string* _internal_mutable_pass();
+  public:
+
   // string user = 2;
   void clear_user();
   const std::string& user() const;
@@ -1102,29 +1089,13 @@ class LoginIn :
   std::string* _internal_mutable_user();
   public:
 
-  // string pass = 3;
-  void clear_pass();
-  const std::string& pass() const;
-  void set_pass(const std::string& value);
-  void set_pass(std::string&& value);
-  void set_pass(const char* value);
-  void set_pass(const char* value, size_t size);
-  std::string* mutable_pass();
-  std::string* release_pass();
-  void set_allocated_pass(std::string* pass);
-  private:
-  const std::string& _internal_pass() const;
-  void _internal_set_pass(const std::string& value);
-  std::string* _internal_mutable_pass();
-  public:
-
   // @@protoc_insertion_point(class_scope:proto.LoginIn)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pass_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr user_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Tweet_2eproto;
 };
@@ -1607,9 +1578,25 @@ class RegisterIn :
   // accessors -------------------------------------------------------
 
   enum : int {
+    kNameFieldNumber = 1,
     kPassFieldNumber = 2,
-    kNameFieldNumber = 3,
   };
+  // string name = 1;
+  void clear_name();
+  const std::string& name() const;
+  void set_name(const std::string& value);
+  void set_name(std::string&& value);
+  void set_name(const char* value);
+  void set_name(const char* value, size_t size);
+  std::string* mutable_name();
+  std::string* release_name();
+  void set_allocated_name(std::string* name);
+  private:
+  const std::string& _internal_name() const;
+  void _internal_set_name(const std::string& value);
+  std::string* _internal_mutable_name();
+  public:
+
   // string pass = 2;
   void clear_pass();
   const std::string& pass() const;
@@ -1626,29 +1613,13 @@ class RegisterIn :
   std::string* _internal_mutable_pass();
   public:
 
-  // string name = 3;
-  void clear_name();
-  const std::string& name() const;
-  void set_name(const std::string& value);
-  void set_name(std::string&& value);
-  void set_name(const char* value);
-  void set_name(const char* value, size_t size);
-  std::string* mutable_name();
-  std::string* release_name();
-  void set_allocated_name(std::string* name);
-  private:
-  const std::string& _internal_name() const;
-  void _internal_set_name(const std::string& value);
-  std::string* _internal_mutable_name();
-  public:
-
   // @@protoc_insertion_point(class_scope:proto.RegisterIn)
  private:
   class _Internal;
 
   ::PROTOBUF_NAMESPACE_ID::internal::InternalMetadataWithArena _internal_metadata_;
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pass_;
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr name_;
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr pass_;
   mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   friend struct ::TableStruct_Tweet_2eproto;
 };
@@ -2107,86 +2078,6 @@ inline void ShowIn::set_allocated_user(std::string* user) {
   // @@protoc_insertion_point(field_set_allocated:proto.ShowIn.user)
 }
 
-// string content = 2;
-inline void ShowIn::clear_content() {
-  content_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline const std::string& ShowIn::content() const {
-  // @@protoc_insertion_point(field_get:proto.ShowIn.content)
-  return _internal_content();
-}
-inline void ShowIn::set_content(const std::string& value) {
-  _internal_set_content(value);
-  // @@protoc_insertion_point(field_set:proto.ShowIn.content)
-}
-inline std::string* ShowIn::mutable_content() {
-  // @@protoc_insertion_point(field_mutable:proto.ShowIn.content)
-  return _internal_mutable_content();
-}
-inline const std::string& ShowIn::_internal_content() const {
-  return content_.GetNoArena();
-}
-inline void ShowIn::_internal_set_content(const std::string& value) {
-  
-  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), value);
-}
-inline void ShowIn::set_content(std::string&& value) {
-  
-  content_.SetNoArena(
-    &::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::move(value));
-  // @@protoc_insertion_point(field_set_rvalue:proto.ShowIn.content)
-}
-inline void ShowIn::set_content(const char* value) {
-  GOOGLE_DCHECK(value != nullptr);
-  
-  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), ::std::string(value));
-  // @@protoc_insertion_point(field_set_char:proto.ShowIn.content)
-}
-inline void ShowIn::set_content(const char* value, size_t size) {
-  
-  content_.SetNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(),
-      ::std::string(reinterpret_cast<const char*>(value), size));
-  // @@protoc_insertion_point(field_set_pointer:proto.ShowIn.content)
-}
-inline std::string* ShowIn::_internal_mutable_content() {
-  
-  return content_.MutableNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline std::string* ShowIn::release_content() {
-  // @@protoc_insertion_point(field_release:proto.ShowIn.content)
-  
-  return content_.ReleaseNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
-}
-inline void ShowIn::set_allocated_content(std::string* content) {
-  if (content != nullptr) {
-    
-  } else {
-    
-  }
-  content_.SetAllocatedNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited(), content);
-  // @@protoc_insertion_point(field_set_allocated:proto.ShowIn.content)
-}
-
-// int64 time = 3;
-inline void ShowIn::clear_time() {
-  time_ = PROTOBUF_LONGLONG(0);
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 ShowIn::_internal_time() const {
-  return time_;
-}
-inline ::PROTOBUF_NAMESPACE_ID::int64 ShowIn::time() const {
-  // @@protoc_insertion_point(field_get:proto.ShowIn.time)
-  return _internal_time();
-}
-inline void ShowIn::_internal_set_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  
-  time_ = value;
-}
-inline void ShowIn::set_time(::PROTOBUF_NAMESPACE_ID::int64 value) {
-  _internal_set_time(value);
-  // @@protoc_insertion_point(field_set:proto.ShowIn.time)
-}
-
 // -------------------------------------------------------------------
 
 // ShowOut
@@ -2254,7 +2145,7 @@ inline void ShowOut::set_error(bool value) {
 
 // LoginIn
 
-// string pass = 3;
+// string pass = 1;
 inline void LoginIn::clear_pass() {
   pass_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }
@@ -2430,7 +2321,7 @@ inline void LogoutOut::set_error(bool value) {
 
 // RegisterIn
 
-// string name = 3;
+// string name = 1;
 inline void RegisterIn::clear_name() {
   name_.ClearToEmptyNoArena(&::PROTOBUF_NAMESPACE_ID::internal::GetEmptyStringAlreadyInited());
 }

@@ -43,8 +43,6 @@ message FollowOut {
 
 message ShowIn {
 	string user = 1;
-	string content = 2;
-	int64 time = 3;
 }
 message ShowOut {
 	repeated TweetIn tweets = 1;
@@ -52,7 +50,7 @@ message ShowOut {
 }
 
 message LoginIn {
-	string pass = 3;
+	string pass = 1;
 	string user = 2;
 }
 message LoginOut {
@@ -66,7 +64,7 @@ message LogoutOut {
 }
 
 message RegisterIn {
-	string name = 3;
+	string name = 1;
 	string pass = 2;
 }
 

@@ -8,7 +8,10 @@ namespace tweet {
 		proto::TweetOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		return {};
+		grpc::string peer = context->peer();
+		bool error = storage_->Tweet(peer, request->content());
+		response->set_error(error);
+		return grpc::Status::OK;
 	}
 
 	grpc::Status Server::Follow(
@@ -17,7 +20,10 @@ namespace tweet {
 		proto::FollowOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		return {};
+		grpc::string peer = context->peer();
+		bool error = storage_->Follow(peer, request->name());
+		response->set_error(error);
+		return grpc::Status::OK;
 	}
 
 	grpc::Status Server::Show(
@@ -26,7 +32,9 @@ namespace tweet {
 		proto::ShowOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		return {};
+		grpc::string peer = context->peer();
+		storage_->Show(peer, request->user());
+		return grpc::Status::OK;
 	}
 
 	grpc::Status Server::Login(
@@ -35,7 +43,10 @@ namespace tweet {
 		proto::LoginOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		return {};
+		grpc::string peer = context->peer();
+		bool error = storage_->Login(peer,request->user(), request->pass());
+		response->set_error(error);
+		return grpc::Status::OK;
 	}
 
 	grpc::Status Server::Logout(
@@ -44,7 +55,10 @@ namespace tweet {
 		proto::LogoutOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		return {};
+		grpc::string peer = context->peer();
+		bool error = storage_->Logout(peer);
+		response->set_error(error);
+		return grpc::Status::OK;
 	}
 
 	grpc::Status Server::Register(
@@ -53,7 +67,10 @@ namespace tweet {
 		proto::RegisterOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		return {};
+		grpc::string peer = context->peer();
+		bool error = storage_->Register(peer, request->name(), request->pass());
+		response->set_error(error);
+		return grpc::Status::OK;
 	}
 
 } // End namespace tweet.
