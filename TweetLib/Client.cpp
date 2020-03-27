@@ -4,80 +4,61 @@ namespace tweet {
 
 	proto::TweetOut Client::Tweet(const proto::TweetIn in)
 	{
-#pragma message ("You have to complete this code!")
 		grpc::ClientContext client_context;
 		proto::TweetOut out;
-		auto status = stub_->Tweet(
-			&client_context, in, &out);
-		if (!status.ok())
-			throw std::runtime_error(
-				"Tweet error.");
+        const auto status = stub_->Tweet(&client_context, in, &out);
+		//if (!status.ok())
+			//throw std::runtime_error("Tweet error.");
 		return out;
 	}
 
 	proto::FollowOut Client::Follow(const proto::FollowIn in)
 	{
-#pragma message ("You have to complete this code!")
 		grpc::ClientContext client_context;
 		proto::FollowOut out;
-		auto status = stub_->Follow(
-			&client_context, in, &out);
-		if (!status.ok())
-			throw std::runtime_error(
-				"Follow error.");
+		const auto status = stub_->Follow(&client_context, in, &out);
+		//if (!status.ok())
+			//throw std::runtime_error("Follow error.");
 		return out;
 	}
 
 	proto::ShowOut Client::Show(const proto::ShowIn in)
 	{
-#pragma message ("You have to complete this code!")
 		grpc::ClientContext client_context;
 		proto::ShowOut out;
-		auto status = stub_->Show(
-			&client_context, in, &out);
-		if (!status.ok())
-			throw std::runtime_error(
-				"Show error.");
+		const auto status = stub_->Show(&client_context, in, &out);
+		//if (!status.ok())
+			//throw std::runtime_error("Show error.");
 		return out;
-		return {};
 	}
 
 	proto::LoginOut Client::Login(const proto::LoginIn in)
 	{
-#pragma message ("You have to complete this code!")
 		grpc::ClientContext client_context;
 		proto::LoginOut out;
-		auto status = stub_->Login(
-			&client_context, in, &out);
-		if (!status.ok())
-			throw std::runtime_error(
-				"Login error.");
+        const auto status = stub_->Login(&client_context, in, &out);
+		//if (!status.ok())
+			//throw std::runtime_error("Login error.");
 		return out;
 	}
 
 	proto::LogoutOut Client::Logout(const proto::LogoutIn in)
 	{
-#pragma message ("You have to complete this code!")
 		grpc::ClientContext client_context;
 		proto::LogoutOut out;
-		auto status = stub_->Logout(
-			&client_context, in, &out);
-		if (!status.ok())
-			throw std::runtime_error(
-				"Logout error.");
+        const auto status = stub_->Logout(&client_context, in, &out);
+		//if (!status.ok())
+			//throw std::runtime_error("Logout error.");
 		return out;
 	}
 
 	proto::RegisterOut Client::Register(const proto::RegisterIn in)
 	{
-#pragma message ("You have to complete this code!")
 		grpc::ClientContext client_context;
 		proto::RegisterOut out;
-		auto status = stub_->Register(
-			&client_context, in, &out);
-		if (!status.ok())
-			throw std::runtime_error(
-				"Register error.");
+        const auto status = stub_->Register(&client_context, in, &out);
+		//if (!status.ok())
+			//throw std::runtime_error("Register error.");
 		return out;
 	}
 

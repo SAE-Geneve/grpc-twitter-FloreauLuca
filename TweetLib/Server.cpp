@@ -8,9 +8,9 @@ namespace tweet {
 		proto::TweetOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		grpc::string peer = context->peer();
-		bool error = storage_->Tweet(peer, request->content());
-		response->set_error(!error);
+        const grpc::string peer = context->peer();
+        const bool valid = storage_->Tweet(peer, request->content());
+		response->set_error(!valid);
 		return grpc::Status::OK;
 	}
 
@@ -20,9 +20,9 @@ namespace tweet {
 		proto::FollowOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		grpc::string peer = context->peer();
-		bool error = storage_->Follow(peer, request->name());
-		response->set_error(!error);
+        const grpc::string peer = context->peer();
+        const bool valid = storage_->Follow(peer, request->name());
+		response->set_error(!valid);
 		return grpc::Status::OK;
 	}
 
@@ -32,9 +32,9 @@ namespace tweet {
 		proto::ShowOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		grpc::string peer = context->peer();
-		std::vector<TweetValue> tweets = storage_->Show(peer, request->user());
-        for (TweetValue tweet : tweets) {
+        const grpc::string peer = context->peer();
+		const std::vector<TweetValue> tweets = storage_->Show(peer, request->user());
+        for (const TweetValue& tweet : tweets) {
 			proto::TweetIn tweetIn;
 			tweetIn.set_user(tweet.name);
 			tweetIn.set_content(tweet.text);
@@ -50,9 +50,9 @@ namespace tweet {
 		proto::LoginOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		grpc::string peer = context->peer();
-		bool error = storage_->Login(peer,request->user(), request->pass());
-		response->set_error(!error);
+        const grpc::string peer = context->peer();
+        const bool valid = storage_->Login(peer,request->user(), request->pass());
+		response->set_error(!valid);
 		return grpc::Status::OK;
 	}
 
@@ -62,9 +62,9 @@ namespace tweet {
 		proto::LogoutOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		grpc::string peer = context->peer();
-		bool error = storage_->Logout(peer);
-		response->set_error(!error);
+        const grpc::string peer = context->peer();
+        const bool valid = storage_->Logout(peer);
+		response->set_error(!valid);
 		return grpc::Status::OK;
 	}
 
@@ -74,9 +74,9 @@ namespace tweet {
 		proto::RegisterOut* response)
 	{
 #pragma message ("You have to complete this code!")
-		grpc::string peer = context->peer();
-		bool error = storage_->Register(peer, request->name(), request->pass());
-		response->set_error(!error);
+        const grpc::string peer = context->peer();
+        const bool valid = storage_->Register(peer, request->name(), request->pass());
+		response->set_error(!valid);
 		return grpc::Status::OK;
 	}
 
