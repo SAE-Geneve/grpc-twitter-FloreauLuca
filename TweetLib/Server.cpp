@@ -7,7 +7,6 @@ namespace tweet {
 		const proto::TweetIn* request, 
 		proto::TweetOut* response)
 	{
-#pragma message ("You have to complete this code!")
         const grpc::string peer = context->peer();
         const bool valid = storage_->Tweet(peer, request->content());
 		response->set_error(!valid);
@@ -19,7 +18,6 @@ namespace tweet {
 		const proto::FollowIn* request, 
 		proto::FollowOut* response)
 	{
-#pragma message ("You have to complete this code!")
         const grpc::string peer = context->peer();
         const bool valid = storage_->Follow(peer, request->name());
 		response->set_error(!valid);
@@ -31,7 +29,6 @@ namespace tweet {
 		const proto::ShowIn* request, 
 		proto::ShowOut* response)
 	{
-#pragma message ("You have to complete this code!")
         const grpc::string peer = context->peer();
 		const std::vector<TweetValue> tweets = storage_->Show(peer, request->user());
         for (const TweetValue& tweet : tweets) {
@@ -49,7 +46,6 @@ namespace tweet {
 		const proto::LoginIn* request, 
 		proto::LoginOut* response)
 	{
-#pragma message ("You have to complete this code!")
         const grpc::string peer = context->peer();
         const bool valid = storage_->Login(peer,request->user(), request->pass());
 		response->set_error(!valid);
@@ -61,7 +57,6 @@ namespace tweet {
 		const proto::LogoutIn* request, 
 		proto::LogoutOut* response)
 	{
-#pragma message ("You have to complete this code!")
         const grpc::string peer = context->peer();
         const bool valid = storage_->Logout(peer);
 		response->set_error(!valid);
@@ -73,7 +68,6 @@ namespace tweet {
 		const proto::RegisterIn* request, 
 		proto::RegisterOut* response)
 	{
-#pragma message ("You have to complete this code!")
         const grpc::string peer = context->peer();
         const bool valid = storage_->Register(peer, request->name(), request->pass());
 		response->set_error(!valid);

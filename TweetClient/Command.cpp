@@ -29,7 +29,7 @@ namespace client {
 		case 2:
 			return Register();
 		case 3:
-			return true;
+			return false;
 		default:
 			return false;
 		}
